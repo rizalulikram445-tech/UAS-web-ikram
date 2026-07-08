@@ -77,7 +77,7 @@
           </article>
 
           <article class="product-card">
-            <img src="https://id.made-in-china.com/co_leyitrading/product_New-Fashionable-Woven-Bag-Versatile-For-Travel-And-Commuting-Cotton-Rope-Woven-Soft-Bag_yusineosny.html"Tas anyaman">
+            <img src="https://id.made-in-china.com/co_leyitrading/product_New-Fashionable-Woven-Bag-Versatile-For-Travel-And-Commuting-Cotton-Rope-Woven-Soft-Bag_yusineosny.html"alt="Tas anyaman">
             <div>
               <span class="badge text-bg-info">Kerajinan</span>
               <h3>Tas Anyaman Lokal</h3>
