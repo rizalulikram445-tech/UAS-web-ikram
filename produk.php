@@ -96,7 +96,7 @@
             <img src="https://www.shuperstore.com/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fentity-e2c04.appspot.com%2Fo%2Fimages%252Fimage-1760863436040%3Falt%3Dmedia%26token%3Dc2da38bb-dac0-4dc6-b3fe-ca13ce5915a9&w=640&q=75" alt="Kopi arabika">
             <div>
               <span class="badge text-bg-warning">Minuman</span>
-              <h3>Kopi Arabika 200g</h3>
+              <h3>Kopi Arabika ikram 200g</h3>
               <p>SKU-UMK-003</p>
               <strong>Rp58.000</strong>
               <span>Stok: 8</span>
