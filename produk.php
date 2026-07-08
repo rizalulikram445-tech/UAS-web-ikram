@@ -61,7 +61,7 @@
 
         <div class="product-grid">
           <article class="product-card">
-            <img src="https://images.unsplash.com/photo-1607349913338-fca6f7fc42d0?auto=format&fit=crop&w=800&q=80" alt="Keripik pisang">
+            <img src="https://asset.kompas.com/crops/DkGdTd89XNa6adESIAw7t9q8d8M=/28x18:996x663/1200x800/data/photo/2022/07/21/62d9074aee727.jpg" alt="Keripik pisang">
             <div>
               <span class="badge text-bg-success">Makanan</span>
               <h3>Keripik Pisang Manis</h3>

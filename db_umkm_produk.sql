@@ -64,6 +64,13 @@ CREATE TABLE `produk` (
   `status_produk` enum('aktif','nonaktif') NOT NULL DEFAULT 'aktif',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+  PRIMARY KEY (`id_produk`),
+  UNIQUE KEY `sku` (`sku`),
+  KEY `idx_produk_nama` (`nama_produk`),
+  KEY `idx_produk_kategori` (`id_kategori`),
+  KEY `idx_produk_status` (`status_produk`),
+  CONSTRAINT `fk_produk_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `kategori_produk` (`id_kategori`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 ) ;
 
 --
