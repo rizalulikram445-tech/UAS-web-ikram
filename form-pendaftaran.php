@@ -13,7 +13,7 @@
     <section id="login" class="login-panel">
       <div class="login-shell">
         <div class="login-illustration">
-          <div class="logo-badge">UMKM ikram</div>
+          <div class="logo-badge">UMKM ada</div>
           <h1>Kelola produk UMKM dengan lebih mudah</h1>
           <p>Masuk ke dashboard untuk mengatur stok, produk, dan laporan usaha Anda dalam satu tempat.</p>
           <ul>
