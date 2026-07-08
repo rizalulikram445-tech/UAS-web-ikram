@@ -11,7 +11,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -64,14 +63,7 @@ CREATE TABLE `produk` (
   `status_produk` enum('aktif','nonaktif') NOT NULL DEFAULT 'aktif',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-  PRIMARY KEY (`id_produk`),
-  UNIQUE KEY `sku` (`sku`),
-  KEY `idx_produk_nama` (`nama_produk`),
-  KEY `idx_produk_kategori` (`id_kategori`),
-  KEY `idx_produk_status` (`status_produk`),
-  CONSTRAINT `fk_produk_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `kategori_produk` (`id_kategori`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-) ;
 
 --
 -- Dumping data for table `produk`
@@ -148,7 +140,7 @@ ALTER TABLE `kategori_produk`
 -- AUTO_INCREMENT for table `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id_produk` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `user_login`
