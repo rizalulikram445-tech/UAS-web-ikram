@@ -77,7 +77,7 @@
           </article>
 
           <article class="product-card">
-            <img src="https://shopee.co.id/Tas-Anyaman-Tas-natural-Variasi-Tali-Kulit-Tas-Enceng-Gondok-Premium-Polos-tanpa-sulaman-i.237644677.21770203225"alt="Tas anyaman">
+            <img src="https://smexpo.pertamina.com/data-smexpo/images/products/4479/id-11134207-7rasj-m13vs48k9wia7b_1732849711.jpeg"alt="Tas anyaman">
             <div>
               <span class="badge text-bg-info">Kerajinan</span>
               <h3>Tas Anyaman Lokal</h3>
