@@ -93,7 +93,7 @@
           </article>
 
           <article class="product-card">
-            <img src="https://images.unsplash.com/photo-1615485737651-580c9159c89f?auto=format&fit=crop&w=800&q=80" alt="Kopi arabika">
+            <img src="https://d10mgmzigw04tx.cloudfront.net/cms/f14a8e07-5f45-44bc-9b03-7dcec0157960-A.%20TORAJA%20200GR.png" alt="Kopi arabika">
             <div>
               <span class="badge text-bg-warning">Minuman</span>
               <h3>Kopi Arabika 200g</h3>
