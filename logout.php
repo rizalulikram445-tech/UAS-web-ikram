@@ -18,3 +18,5 @@
       <a href="kategori.php"><i class="bi bi-tags"></i> Kategori</a>
       <a href="logout.php"><i class="bi bi-person-lock"></i> Log-out</a>
     </aside>
+
+       <main class="content">
