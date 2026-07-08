@@ -20,3 +20,7 @@
     </aside>
 
        <main class="content">
+
+       <a href="form-pendaftaran.php" onclick="return confirm('Apakah Anda yakin ingin logout?')">
+    <i class="bi bi-person-lock"></i> Log-out
+</a>
