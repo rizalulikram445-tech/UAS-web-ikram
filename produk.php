@@ -77,7 +77,7 @@
           </article>
 
           <article class="product-card">
-            <img src="https://id.pngtree.com/free-png-vectors/tas-anyaman"alt="Tas anyaman">
+            <img src="https://smexpo.pertamina.com/p/4479/tas-anyaman-eceng-motif"alt="Tas anyaman">
             <div>
               <span class="badge text-bg-info">Kerajinan</span>
               <h3>Tas Anyaman Lokal</h3>
