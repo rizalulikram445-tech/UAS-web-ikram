@@ -96,7 +96,7 @@
             <img src="https://images.unsplash.com/photo-1615485737651-580c9159c89f?auto=format&fit=crop&w=800&q=80" alt="Kopi arabika">
             <div>
               <span class="badge text-bg-warning">Minuman</span>
-              <h3>Kopi Arabika 200g</h3>
+              <h3>Kopi Arabika ikram 200g</h3>
               <p>SKU-UMK-003</p>
               <strong>Rp58.000</strong>
               <span>Stok: 8</span>
