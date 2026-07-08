@@ -77,7 +77,7 @@
           </article>
 
           <article class="product-card">
-            <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80" alt="Tas anyaman">
+            <img src="https://id.made-in-china.com/co_leyitrading/product_New-Fashionable-Woven-Bag-Versatile-For-Travel-And-Commuting-Cotton-Rope-Woven-Soft-Bag_yusineosny.html"Tas anyaman">
             <div>
               <span class="badge text-bg-info">Kerajinan</span>
               <h3>Tas Anyaman Lokal</h3>
@@ -93,7 +93,7 @@
           </article>
 
           <article class="product-card">
-            <img src="https://www.shuperstore.com/_next/image?url=https%3A%2F%2Ffirebasestorage.googleapis.com%2Fv0%2Fb%2Fentity-e2c04.appspot.com%2Fo%2Fimages%252Fimage-1760863436040%3Falt%3Dmedia%26token%3Dc2da38bb-dac0-4dc6-b3fe-ca13ce5915a9&w=640&q=75" alt="Kopi arabika">
+            <img src="https://images.unsplash.com/photo-1615485737651-580c9159c89f?auto=format&fit=crop&w=800&q=80" alt="Kopi arabika">
             <div>
               <span class="badge text-bg-warning">Minuman</span>
               <h3>Kopi Arabika 200g</h3>
