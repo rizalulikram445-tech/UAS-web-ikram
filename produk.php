@@ -34,7 +34,7 @@ include "koneksi.php";
             <p>Data Produk</p>
             <h2>Produk UMKM</h2>
           </div>
-          <a href="#form-produk" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Tambah</a>
+          <a href="form-produk.php" class="btn btn-primary"><i class="bi bi-plus-lg"></i> Tambah</a>
         </div>
 
         <form class="row g-2 mb-4" action="#produk" method="get">
