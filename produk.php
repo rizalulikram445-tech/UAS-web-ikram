@@ -111,6 +111,41 @@ include "koneksi.php";
               </div>
             </div>
           </article>
+
+          
+          <article class="product-card">
+            <img src="https://www.screamous.com/cdn/shop/files/id-11134207-81ztp-mee0uu9svaps88_grande.jpg?v=1757404027" alt="Hoodie Double Zipper">
+            <div>
+              <span class="badge text-bg-warning">Fasion</span>
+              <h3>Hoodie Double Zipper</h3>
+              <p>SKU-UMK-004</p>
+              <strong>Rp150.000</strong>
+              <span>Stok: 30</span>
+              <div class="actions">
+                <a href="#detail" class="btn btn-sm btn-outline-primary">Detail</a>
+                <a href="#form-produk" class="btn btn-sm btn-outline-secondary">Edit</a>
+                <a href="#hapus" class="btn btn-sm btn-outline-danger">Hapus</a>
+              </div>
+            </div>
+          </article>
+
+          
+          <article class="product-card">
+            <img src="https://fibercreme.com/wp-content/uploads/2021/10/1.-Tiramisu-Dessert-Box.jpg" alt="Dessert box">
+            <div>
+              <span class="badge text-bg-warning">Makanan</span>
+              <h3>Dessert box</h3>
+              <p>SKU-UMK-005</p>
+              <strong>Rp80.000</strong>
+              <span>Stok: 20</span>
+              <div class="actions">
+                <a href="#detail" class="btn btn-sm btn-outline-primary">Detail</a>
+                <a href="#form-produk" class="btn btn-sm btn-outline-secondary">Edit</a>
+                <a href="#hapus" class="btn btn-sm btn-outline-danger">Hapus</a>
+              </div>
+            </div>
+          </article>
+
         </div>
       </section>
 

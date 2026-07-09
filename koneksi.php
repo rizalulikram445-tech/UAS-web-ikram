@@ -11,4 +11,3 @@ if ($koneksi){
 }else{
     echo "database tidak terkoneksi";
 }
-?>
