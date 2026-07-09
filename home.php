@@ -1,5 +1,16 @@
 <?php
 include "koneksi.php";
+$queryProduk = mysqli_query($koneksi, "SELECT COUNT(*) AS total FROM produk");
+$jumlahProduk = mysqli_fetch_assoc($queryProduk);
+
+$queryKategori = mysqli_query($koneksi, "SELECT COUNT(*) AS total FROM kategori");
+$jumlahKategori = mysqli_fetch_assoc($queryKategori);
+
+$queryStok = mysqli_query($koneksi, "SELECT SUM(stok) AS total FROM produk");
+$totalStok = mysqli_fetch_assoc($queryStok);
+
+$queryNilai = mysqli_query($koneksi, "SELECT SUM(harga*stok) AS total FROM produk");
+$totalNilai = mysqli_fetch_assoc($queryNilai);
 ?>
 
 <!doctype html>
@@ -31,10 +42,10 @@ include "koneksi.php";
       </section>
 
       <section class="stats">
-        <div><i class="bi bi-box2-heart"></i><small>Total Produk</small><strong>128</strong></div>
-        <div><i class="bi bi-tags"></i><small>Kategori</small><strong>8</strong></div>
-        <div><i class="bi bi-exclamation-triangle"></i><small>Stok Menipis</small><strong>12</strong></div>
-        <div><i class="bi bi-cash-stack"></i><small>Nilai Produk</small><strong>Rp42,5 jt</strong></div>
+        <div><i class="bi bi-box2-heart"></i><small>Total Produk</small><strong><?= $jumlahProduk['total']; ?></strong></div>
+        <div><i class="bi bi-tags"></i><small>Kategori</small><strong><?= $jumlahKategori['total']; ?></strong></div>
+        <div><i class="bi bi-exclamation-triangle"></i><small>Stok Menipis</small><strong><?= $totalStok['total']; ?></strong></div>
+        <div><i class="bi bi-cash-stack"></i><small>Nilai Produk</small><strong>Rp<?= number_format($totalNilai['total'],0,',','.'); ?></strong></div>
       </section>
 
       <section id="produk" class="panel">
