@@ -1,9 +1,10 @@
 <?php
 include "koneksi.php";
+
 $queryProduk = mysqli_query($koneksi, "SELECT COUNT(*) AS total FROM produk");
 $jumlahProduk = mysqli_fetch_assoc($queryProduk);
 
-$queryKategori = mysqli_query($koneksi, "SELECT COUNT(*) AS total FROM kategori");
+$queryKategori = mysqli_query($koneksi, "SELECT COUNT(*) AS total FROM kategori_produk");
 $jumlahKategori = mysqli_fetch_assoc($queryKategori);
 
 $queryStok = mysqli_query($koneksi, "SELECT SUM(stok) AS total FROM produk");
@@ -24,6 +25,7 @@ $totalNilai = mysqli_fetch_assoc($queryNilai);
   <link href="style.css" rel="stylesheet">
 </head>
 <body>
+
   <div class="layout">
     <aside class="sidebar">
       <div class="brand"><i class="bi bi-shop"></i><span>UMKM Mart</span></div>

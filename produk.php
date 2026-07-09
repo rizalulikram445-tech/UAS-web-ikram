@@ -148,7 +148,7 @@ include "koneksi.php";
 
 
           <article class="product-card">
-            <img src="https://image.made-in-china.com/202f0j00kqQcMBLySmbo/European-Grey-Feather-Mirror-Home-Decor-Wall-Hanging-Mirror.webp"alt="Cermin Hiasan Dinding">
+            <img src="https://smexpo.pertamina.com/data-smexpo/images/products/4479/id-11134207-7rasj-m13vs48k9wia7b_1732849711.jpeg"alt="Cermin Hiasan Dinding">
             <div>
               <span class="badge text-bg-info">Kerajinan</span>
               <h3>Cermin Hiasan Dinding</h3>
