@@ -6,8 +6,7 @@ $db   = "db_umkm_produk"; // Sesuaikan dengan nama database di phpMyAdmin
 
 $koneksi = mysqli_connect($host, $user, $pass, $db);
 
-if ($koneksi){
-    echo "database terkoneksi";
-}else{
-    echo "database tidak terkoneksi";
+if (!$koneksi){
+    die("Koneksi gagal : ".mysqli_connect_error());
 }
+?>
