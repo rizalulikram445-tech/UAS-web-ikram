@@ -1,5 +1,40 @@
 <?php
 include "koneksi.php";
+
+if(isset($_POST['simpan'])){
+
+    $nama_produk   = $_POST['nama_produk'];
+    $sku           = $_POST['sku'];
+    $id_kategori   = $_POST['id_kategori'];
+    $harga         = $_POST['harga'];
+    $stok          = $_POST['stok'];
+    $status_produk = $_POST['status_produk'];
+    $deskripsi     = $_POST['deskripsi'];
+
+    $gambar_produk = "";
+
+    $simpan = mysqli_query($koneksi,"
+        INSERT INTO produk
+        (id_kategori,nama_produk,sku,deskripsi,harga,stok,gambar_produk,status_produk)
+        VALUES
+        ('$id_kategori',
+        '$nama_produk',
+        '$sku',
+        '$deskripsi',
+        '$harga',
+        '$stok',
+        '$gambar_produk',
+        '$status_produk')
+    ");
+
+    if($simpan){
+        header("Location: produk.php");
+        exit;
+    }else{
+        echo "Data gagal disimpan!";
+    }
+
+}
 ?>
 
 <!doctype html>
@@ -36,7 +71,7 @@ include "koneksi.php";
           </div>
         </div>
 
-        <form action="#" method="post" class="row g-3">
+        <form method="post" class="row g-3">
           <input type="hidden" name="id_produk" value="">
           <div class="col-md-6">
             <label class="form-label">Nama Produk</label>
@@ -76,7 +111,9 @@ include "koneksi.php";
             <textarea name="deskripsi" class="form-control" rows="4" maxlength="500"></textarea>
           </div>
           <div class="col-12">
-            <button class="btn btn-primary" type="submit">Simpan Produk</button>
+            <button class="btn btn-primary" type="submit" name="simpan">
+              Simpan Produk
+            </button>
             <button class="btn btn-outline-secondary" type="reset">Reset</button>
           </div>
         </form>
