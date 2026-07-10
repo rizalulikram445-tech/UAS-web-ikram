@@ -28,10 +28,9 @@ if(isset($_POST['simpan'])){
     ");
 
     if($simpan){
-        header("Location: produk.php");
-        exit;
+      echo "Data berhasil disimpan";
     }else{
-        echo "Data gagal disimpan!";
+      echo "Error : ".mysqli_error($koneksi);
     }
 
 }
