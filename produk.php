@@ -1,5 +1,21 @@
 <?php
 include "koneksi.php";
+
+$query = mysqli_query($koneksi, "
+SELECT produk.*, kategori_produk.nama_kategori
+FROM produk
+JOIN kategori_produk
+ON produk.id_kategori = kategori_produk.id_kategori
+");
+
+
+$warna = [
+    "Makanan"   => "text-bg-success",
+    "Minuman"   => "text-bg-warning",
+    "Kerajinan" => "text-bg-info",
+    "Fashion"   => "text-bg-secondary"
+];
+
 ?>
 
 <!doctype html>
@@ -65,53 +81,63 @@ include "koneksi.php";
 
         <div class="product-grid">
 
-          <article class="product-card">
-            <img src="https://asset.kompas.com/crops/DkGdTd89XNa6adESIAw7t9q8d8M=/28x18:996x663/1200x800/data/photo/2022/07/21/62d9074aee727.jpg" alt="Keripik pisang">
-            <div>
-              <span class="badge text-bg-success">Makanan</span>
-              <h3>Keripik Pisang Manis</h3>
-              <p>SKU-UMK-001</p>
-              <strong>Rp18.000</strong>
-              <span>Stok: 45</span>
-              <div class="actions">
-                <a href="#detail" class="btn btn-sm btn-outline-primary">Detail</a>
-                <a href="#form-produk" class="btn btn-sm btn-outline-secondary">Edit</a>
-                <a href="#hapus" class="btn btn-sm btn-outline-danger">Hapus</a>
-              </div>
-            </div>
-          </article>
+      
 
-          <article class="product-card">
-            <img src="https://smexpo.pertamina.com/data-smexpo/images/products/4479/id-11134207-7rasj-m13vs48k9wia7b_1732849711.jpeg"alt="Tas anyaman">
-            <div>
-              <span class="badge text-bg-info">Kerajinan</span>
-              <h3>Tas Anyaman Lokal</h3>
-              <p>SKU-UMK-002</p>
-              <strong>Rp125.000</strong>
-              <span>Stok: 16</span>
-              <div class="actions">
-                <a href="#detail" class="btn btn-sm btn-outline-primary">Detail</a>
-                <a href="#form-produk" class="btn btn-sm btn-outline-secondary">Edit</a>
-                <a href="#hapus" class="btn btn-sm btn-outline-danger">Hapus</a>
-              </div>
-            </div>
-          </article>
+<?php
+while($data = mysqli_fetch_assoc($query)){
+?>
 
-          <article class="product-card">
-            <img src="https://d10mgmzigw04tx.cloudfront.net/cms/f14a8e07-5f45-44bc-9b03-7dcec0157960-A.%20TORAJA%20200GR.png" alt="Kopi arabika">
-            <div>
-              <span class="badge text-bg-warning">Minuman</span>
-              <h3>Kopi Arabika 200g</h3>
-              <p>SKU-UMK-003</p>
-              <strong>Rp58.000</strong>
-              <span>Stok: 8</span>
-              <div class="actions">
-                <a href="#detail" class="btn btn-sm btn-outline-primary">Detail</a>
-                <a href="#form-produk" class="btn btn-sm btn-outline-secondary">Edit</a>
-                <a href="#hapus" class="btn btn-sm btn-outline-danger">Hapus</a>
-              </div>
-            </div>
-          </article>
+<article class="product-card">
+
+   <img src="img/<?php echo $data['gambar_produk']; ?>" alt="<?php echo $data['nama_produk']; ?>">
+
+    <div>
+
+       <span class="badge <?php echo $warna[$data['nama_kategori']]; ?>">
+    <?php echo $data['nama_kategori']; ?>
+</span>
+
+        <h3>
+            <?php echo $data['nama_produk']; ?>
+        </h3>
+
+        <p>
+            <?php echo $data['sku']; ?>
+        </p>
+
+        <strong>
+            Rp<?php echo number_format($data['harga'],0,',','.'); ?>
+        </strong>
+
+        <span>
+            Stok : <?php echo $data['stok']; ?>
+        </span>
+
+        <div class="actions">
+
+            <a href="detail.php?id=<?php echo $data['id_produk']; ?>" class="btn btn-sm btn-outline-primary">
+                Detail
+            </a>
+
+            <a href="edit.php?id=<?php echo $data['id_produk']; ?>" class="btn btn-sm btn-outline-secondary">
+                Edit
+            </a>
+
+            <a href="hapus.php?id=<?php echo $data['id_produk']; ?>" class="btn btn-sm btn-outline-danger">
+                Hapus
+            </a>
+
+        </div>
+
+    </div>
+
+</article>
+
+<?php
+}
+?>
+
+</div>
 
 
         </div>
