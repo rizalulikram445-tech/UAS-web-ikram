@@ -64,6 +64,7 @@ include "koneksi.php";
         </form>
 
         <div class="product-grid">
+
           <article class="product-card">
             <img src="https://asset.kompas.com/crops/DkGdTd89XNa6adESIAw7t9q8d8M=/28x18:996x663/1200x800/data/photo/2022/07/21/62d9074aee727.jpg" alt="Keripik pisang">
             <div>
@@ -112,56 +113,6 @@ include "koneksi.php";
             </div>
           </article>
 
-          
-          <article class="product-card">
-            <img src="https://www.screamous.com/cdn/shop/files/id-11134207-81ztp-mee0uu9svaps88_grande.jpg?v=1757404027" alt="Hoodie Double Zipper">
-            <div>
-              <span class="badge text-bg-secondary">Fasion</span>
-              <h3>Hoodie Double Zipper</h3>
-              <p>SKU-UMK-004</p>
-              <strong>Rp150.000</strong>
-              <span>Stok: 30</span>
-              <div class="actions">
-                <a href="#detail" class="btn btn-sm btn-outline-primary">Detail</a>
-                <a href="#form-produk" class="btn btn-sm btn-outline-secondary">Edit</a>
-                <a href="#hapus" class="btn btn-sm btn-outline-danger">Hapus</a>
-              </div>
-            </div>
-          </article>
-
-          
-          <article class="product-card">
-            <img src="https://fibercreme.com/wp-content/uploads/2021/10/1.-Tiramisu-Dessert-Box.jpg" alt="Dessert box">
-            <div>
-              <span class="badge text-bg-success">Makanan</span>
-              <h3>Dessert box</h3>
-              <p>SKU-UMK-005</p>
-              <strong>Rp80.000</strong>
-              <span>Stok: 20</span>
-              <div class="actions">
-                <a href="#detail" class="btn btn-sm btn-outline-primary">Detail</a>
-                <a href="#form-produk" class="btn btn-sm btn-outline-secondary">Edit</a>
-                <a href="#hapus" class="btn btn-sm btn-outline-danger">Hapus</a>
-              </div>
-            </div>
-          </article>
-
-
-          <article class="product-card">
-            <img src="https://smexpo.pertamina.com/data-smexpo/images/products/4479/id-11134207-7rasj-m13vs48k9wia7b_1732849711.jpeg"alt="Cermin Hiasan Dinding">
-            <div>
-              <span class="badge text-bg-info">Kerajinan</span>
-              <h3>Cermin Hiasan Dinding</h3>
-              <p>SKU-UMK-006</p>
-              <strong>Rp50.000</strong>
-              <span>Stok: 16</span>
-              <div class="actions">
-                <a href="#detail" class="btn btn-sm btn-outline-primary">Detail</a>
-                <a href="#form-produk" class="btn btn-sm btn-outline-secondary">Edit</a>
-                <a href="#hapus" class="btn btn-sm btn-outline-danger">Hapus</a>
-              </div>
-            </div>
-          </article>
 
         </div>
       </section>
