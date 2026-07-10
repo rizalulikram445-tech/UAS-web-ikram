@@ -145,11 +145,11 @@ while($data = mysqli_fetch_assoc($query)){
 
         <div class="actions">
 
-            <a href="detail.php?id=<?php echo $data['id_produk']; ?>" class="btn btn-sm btn-outline-primary">
+            <a href="form-produk.php?id=<?php echo $data['id_produk']; ?>" class="btn btn-sm btn-outline-primary">
                 Detail
             </a>
 
-            <a href="edit.php?id=<?php echo $data['id_produk']; ?>" class="btn btn-sm btn-outline-secondary">
+            <a href="form-produk.php?id=<?php echo $data['id_produk']; ?>" class="btn btn-sm btn-outline-secondary">
                 Edit
             </a>
 
