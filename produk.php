@@ -1,13 +1,43 @@
 <?php
+
 include "koneksi.php";
 
-$query = mysqli_query($koneksi, "
+$kata_kunci = isset($_GET['kata_kunci']) ? $_GET['kata_kunci'] : "";
+$kategori   = isset($_GET['kategori']) ? $_GET['kategori'] : "";
+$stok       = isset($_GET['stok']) ? $_GET['stok'] : "";
+
+$sql = "
 SELECT produk.*, kategori_produk.nama_kategori
 FROM produk
 JOIN kategori_produk
 ON produk.id_kategori = kategori_produk.id_kategori
-");
+WHERE 1=1
+";
 
+if($kata_kunci != ""){
+    $sql .= " AND (
+        produk.nama_produk LIKE '%$kata_kunci%'
+        OR produk.sku LIKE '%$kata_kunci%'
+    )";
+}
+
+if($kategori != ""){
+    $sql .= " AND kategori_produk.nama_kategori='$kategori'";
+}
+
+if($stok == "Tersedia"){
+    $sql .= " AND produk.stok > 20";
+}
+
+if($stok == "Menipis"){
+    $sql .= " AND produk.stok BETWEEN 1 AND 20";
+}
+
+if($stok == "Habis"){
+    $sql .= " AND produk.stok = 0";
+}
+
+$query = mysqli_query($koneksi, $sql);
 
 $warna = [
     "Makanan"   => "text-bg-success",
