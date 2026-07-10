@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
   // Mengambil data dari tabel user/admin di database
   $query = mysqli_query($koneksi, "SELECT * FROM login WHERE username='$username' AND password='$password'");
     if (!$query) {
-      $query = mysqli_query($koneksi, "SELECT * FORM nama_tabel") or die(mysqli_error($koneksi));
+      $query = mysqli_query($koneksi, "SELECT * FROM nama_tabel") or die(mysqli_error($koneksi));
     }
   $cek = mysqli_num_rows($query);
 
