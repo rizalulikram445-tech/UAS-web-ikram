@@ -71,7 +71,7 @@ $totalNilai = mysqli_fetch_assoc($queryNilai);
         <div class="col-md-3">
           <div class="p-4 bg-white border rounded shadow-sm h-100">
             <i class="bi bi-exclamation-triangle text-danger fs-1 mb-2 d-block"></i>
-            <small class="text-muted d-block mb-1">Stok Menipis (&lt; 10)</small>
+            <small class="text-muted d-block mb-1">Stok Menipis </small>
             <strong class="fs-3 text-danger"><?= number_format($totalStok['total'], 0, ',', '.'); ?></strong>
           </div>
         </div>
