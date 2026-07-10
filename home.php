@@ -7,7 +7,7 @@ $jumlahProduk = mysqli_fetch_assoc($queryProduk);
 $queryKategori = mysqli_query($koneksi, "SELECT COUNT(*) AS total FROM kategori_produk");
 $jumlahKategori = mysqli_fetch_assoc($queryKategori);
 
-$queryStok = mysqli_query($koneksi, "SELECT SUM(stok) AS total FROM produk");
+$queryStok = mysqli_query($koneksi, "SELECT COUNT(*) AS total FROM produk WHERE stok < 10");
 $totalStok = mysqli_fetch_assoc($queryStok);
 
 $queryNilai = mysqli_query($koneksi, "SELECT SUM(harga*stok) AS total FROM produk");
