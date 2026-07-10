@@ -3,13 +3,14 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 01, 2026 at 05:28 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Waktu pembuatan: 10 Jul 2026 pada 12.53
+-- Versi server: 10.4.32-MariaDB
+-- Versi PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
+
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -23,7 +24,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `kategori_produk`
+-- Struktur dari tabel `kategori_produk`
 --
 
 CREATE TABLE `kategori_produk` (
@@ -36,19 +37,21 @@ CREATE TABLE `kategori_produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `kategori_produk`
+-- Dumping data untuk tabel `kategori_produk`
 --
 
 INSERT INTO `kategori_produk` (`id_kategori`, `nama_kategori`, `deskripsi_kategori`, `status_kategori`, `created_at`, `updated_at`) VALUES
 (1, 'Makanan', 'Produk makanan ringan, kue, dan olahan lokal.', 'aktif', '2026-07-01 01:13:05', '2026-07-01 01:13:05'),
 (2, 'Minuman', 'Minuman kemasan, kopi, teh, dan jamu.', 'aktif', '2026-07-01 01:13:05', '2026-07-01 01:13:05'),
 (3, 'Kerajinan', 'Produk handmade dan kerajinan lokal.', 'aktif', '2026-07-01 01:13:05', '2026-07-01 01:13:05'),
-(4, 'Fashion', 'Pakaian, aksesori, dan produk tekstil.', 'aktif', '2026-07-01 01:13:05', '2026-07-01 01:13:05');
+(4, 'Fashion', 'Pakaian, aksesori, dan produk tekstil.', 'aktif', '2026-07-01 01:13:05', '2026-07-01 01:13:05'),
+(6, 'Tumbuhan', 'Bunga, bibit, pupuk, aman untuk hewan', 'aktif', '2026-07-10 10:17:28', '2026-07-10 10:17:28'),
+(9, 'pakaian', 'croptop', 'aktif', '2026-07-10 10:34:16', '2026-07-10 10:34:16');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produk`
+-- Struktur dari tabel `produk`
 --
 
 CREATE TABLE `produk` (
@@ -66,7 +69,7 @@ CREATE TABLE `produk` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `produk`
+-- Dumping data untuk tabel `produk`
 --
 
 INSERT INTO `produk` (`id_produk`, `id_kategori`, `nama_produk`, `sku`, `deskripsi`, `harga`, `stok`, `gambar_produk`, `status_produk`, `created_at`, `updated_at`) VALUES
@@ -77,7 +80,7 @@ INSERT INTO `produk` (`id_produk`, `id_kategori`, `nama_produk`, `sku`, `deskrip
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_login`
+-- Struktur dari tabel `user_login`
 --
 
 CREATE TABLE `user_login` (
@@ -92,25 +95,25 @@ CREATE TABLE `user_login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `user_login`
+-- Dumping data untuk tabel `user_login`
 --
 
 INSERT INTO `user_login` (`id_user`, `nama_lengkap`, `username`, `password`, `level_user`, `status_user`, `created_at`, `updated_at`) VALUES
-(1, 'Administrator UMKM', 'admin_umkm', 'password_hash_disimpan_di_backend', 'admin', 'aktif', '2026-07-01 01:13:05', '2026-07-01 01:13:05');
+(1, 'admin umkm', 'admin_umkm', 'emeraldgold', 'admin', 'aktif', '2026-07-01 01:13:05', '2026-07-08 08:03:29');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `kategori_produk`
+-- Indeks untuk tabel `kategori_produk`
 --
 ALTER TABLE `kategori_produk`
   ADD PRIMARY KEY (`id_kategori`),
   ADD UNIQUE KEY `nama_kategori` (`nama_kategori`);
 
 --
--- Indexes for table `produk`
+-- Indeks untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD PRIMARY KEY (`id_produk`),
@@ -120,40 +123,40 @@ ALTER TABLE `produk`
   ADD KEY `idx_produk_status` (`status_produk`);
 
 --
--- Indexes for table `user_login`
+-- Indeks untuk tabel `user_login`
 --
 ALTER TABLE `user_login`
   ADD PRIMARY KEY (`id_user`),
   ADD UNIQUE KEY `username` (`username`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `kategori_produk`
+-- AUTO_INCREMENT untuk tabel `kategori_produk`
 --
 ALTER TABLE `kategori_produk`
-  MODIFY `id_kategori` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_kategori` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT for table `produk`
+-- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `id_produk` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_produk` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `user_login`
+-- AUTO_INCREMENT untuk tabel `user_login`
 --
 ALTER TABLE `user_login`
   MODIFY `id_user` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `produk`
+-- Ketidakleluasaan untuk tabel `produk`
 --
 ALTER TABLE `produk`
   ADD CONSTRAINT `fk_produk_kategori` FOREIGN KEY (`id_kategori`) REFERENCES `kategori_produk` (`id_kategori`) ON UPDATE CASCADE;
