@@ -1,27 +1,32 @@
 <?php
 include "koneksi.php";
 
-//  CEK APAKAH TOMBOL "MASUK" SUDAH DICLIK
-if ($_SERVER["REQUEST_METHOD"] == "POST"){
-  $username = $_POST['username'];
-  $password = $_POST['password'];
+<?php
+include "koneksi.php";[cite: 2]
 
-  // Mengambil data dari tabel user/admin di database
-  $query = mysqli_query($koneksi, "SELECT * FROM login WHERE username='$username' AND password='$password'");
+if ($_SERVER["REQUEST_METHOD"] == "POST"){[cite: 2]
+    $username = mysqli_real_escape_string($koneksi, $_POST['username']);
+    $password = $_POST['password'];[cite: 2]
+
+    // Memperbaiki nama tabel menjadi user_login sesuai database
+    $query = mysqli_query($koneksi, "SELECT * FROM user_login WHERE username='$username' AND password='$password'");
+    
     if (!$query) {
-      $query = mysqli_query($koneksi, "SELECT * FROM nama_tabel") or die(mysqli_error($koneksi));
+        die("Query Error: " . mysqli_error($koneksi));
     }
-  $cek = mysqli_num_rows($query);
+
+    $cek = mysqli_num_rows($query);[cite: 2]
 
     if ($cek > 0) {
-        // Login berhasil, buat session dan pindah halaman
-        session_start();
-        $_SESSION['username'] = $username;
-        header("Location: home.php");
+        session_start();[cite: 2]
+        $_SESSION['username'] = $username;[cite: 2]
+        header("Location: home.php");[cite: 2]
+        exit;
     } else {
-        echo "<script>alert('Username atau Password salah!');</script>";
+        echo "<script>alert('Username atau Password salah!');</script>";[cite: 2]
     }
 }
+?>
 ?>
 
 <!doctype html>
