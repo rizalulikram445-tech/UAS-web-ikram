@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         echo "<script>alert('Username tidak ditemukan!'); window.location='form-login.php';</script>";
-    }bih mudah</h1>
+    }bih</h1>
 }
 ?>
 <!doctype html>
