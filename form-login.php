@@ -50,7 +50,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         echo "<script>alert('Username tidak ditemukan!'); window.location='form-login.php';</script>";
-    }bih</h1>
+    }
 }
 ?>
           <p>Masuk ke dashboard untuk mengatur stok, produk, dan laporan usaha Anda dalam satu tempat.</p>
