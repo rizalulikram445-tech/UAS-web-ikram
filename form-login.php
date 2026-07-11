@@ -1,3 +1,21 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login - Sistem Pengelolaan Data Produk UMKM</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <main class="content m-0 p-0">
+    <section id="login" class="login-panel d-flex align-items-center justify-content-center" style="min-height: 100vh;">
+      <div class="login-shell row w-75 shadow-lg rounded overflow-hidden bg-white">
+        <div class="login-illustration col-md-6 bg-primary text-white p-5 d-flex flex-column justify-content-center">
+          <div class="logo-badge mb-3 text-uppercase fw-bold border border-white d-inline-block px-3 py-1 rounded" style="width: fit-content;">UMKM</div>
+          <h1>Kelola produk UMKM dengan lebih mudah</h1>
 <?php
 session_start();
 include "koneksi.php";
@@ -32,26 +50,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     } else {
         echo "<script>alert('Username tidak ditemukan!'); window.location='form-login.php';</script>";
-    }bih</h1>
+    }bih mudah</h1>
 }
 ?>
-<!doctype html>
-<html lang="id">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login - Sistem Pengelolaan Data Produk UMKM</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
-</head>
-<body>
-  <main class="content m-0 p-0">
-    <section id="login" class="login-panel d-flex align-items-center justify-content-center" style="min-height: 100vh;">
-      <div class="login-shell row w-75 shadow-lg rounded overflow-hidden bg-white">
-        <div class="login-illustration col-md-6 bg-primary text-white p-5 d-flex flex-column justify-content-center">
-          <div class="logo-badge mb-3 text-uppercase fw-bold border border-white d-inline-block px-3 py-1 rounded" style="width: fit-content;">UMKM</div>
-          <h1>Kelola produk UMKM dengan lebih mudah</h1>
           <p>Masuk ke dashboard untuk mengatur stok, produk, dan laporan usaha Anda dalam satu tempat.</p>
           <ul class="list-unstyled mt-3">
             <li><i class="bi bi-check-circle-fill me-2"></i> Pantau aktivitas harian</li>
