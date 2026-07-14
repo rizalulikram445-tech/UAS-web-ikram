@@ -125,5 +125,8 @@ $queryKategori = mysqli_query($koneksi, $sqlKategori);
       </section>
     </main>
   </div>
+
+<script src="nkategori.js"></script>
+
 </body>
 </html>
