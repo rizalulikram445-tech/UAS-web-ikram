@@ -142,5 +142,8 @@ if (isset($_POST['simpan'])) {
       </section>
     </main>
   </div>
+
+<script src="script.js"></script>
+
 </body>
 </html>

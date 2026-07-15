@@ -172,7 +172,7 @@ while($data = mysqli_fetch_assoc($query)){
 
         </div>
       </section>
-
+<script src="script.js"></script>
       
     </main>
   </div>

@@ -87,5 +87,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </section>
   </main>
+
+<script src="script.js"></script>
+  
 </body>
 </html>
