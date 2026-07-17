@@ -58,28 +58,30 @@ $totalNilai = mysqli_fetch_assoc($queryNilai);
           <div class="p-4 bg-white border rounded shadow-sm h-100">
             <i class="bi bi-box2-heart text-primary fs-1 mb-2 d-block"></i>
             <small class="text-muted d-block mb-1">Total Produk</small>
-            <strong class="fs-3"><?= number_format($jumlahProduk['total'], 0, ',', '.'); ?></strong>
+            <strong class="fs-3 counter"data-target="<?= $jumlahProduk['total']; ?>">0</strong>
           </div>
         </div>
         <div class="col-md-3">
           <div class="p-4 bg-white border rounded shadow-sm h-100">
             <i class="bi bi-tags text-success fs-1 mb-2 d-block"></i>
             <small class="text-muted d-block mb-1">Kategori Aktif</small>
-            <strong class="fs-3"><?= number_format($jumlahKategori['total'], 0, ',', '.'); ?></strong>
+            <strong class="fs-3 counter"data-target="<?= $jumlahKategori['total']; ?>">0</strong>
           </div>
         </div>
         <div class="col-md-3">
           <div class="p-4 bg-white border rounded shadow-sm h-100">
             <i class="bi bi-exclamation-triangle text-danger fs-1 mb-2 d-block"></i>
             <small class="text-muted d-block mb-1">Stok Menipis </small>
-            <strong class="fs-3 text-danger"><?= number_format($totalStok['total'], 0, ',', '.'); ?></strong>
+            <strong class="fs-3 counter"data-target="<?= $totalStok['total']; ?>">0</strong>
           </div>
         </div>
         <div class="col-md-3">
           <div class="p-4 bg-white border rounded shadow-sm h-100">
             <i class="bi bi-currency-exchange text-warning fs-1 mb-2 d-block"></i>
             <small class="text-muted d-block mb-1">Nilai Aset Produk</small>
-            <strong class="fs-4 d-block mt-1">Rp<?= number_format($totalNilai['total'] ?? 0, 0, ',', '.'); ?></strong>
+            <strong class="fs-4 d-block mt-1">Rp
+              <span class="counter"data-target="<?= $totalNilai['total'] ?? 0; ?>">0</span>
+            </strong>
           </div>
         </div>
       </section>

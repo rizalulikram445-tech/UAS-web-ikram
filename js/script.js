@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const target = +counter.getAttribute('data-target');
 
-        const speed = 40;
+        const speed = 80;
 
         const updateCount = () => {
 
@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     counter.innerText = target.toLocaleString('id-ID');
                 } else {
                     counter.innerText = nextCount.toLocaleString('id-ID');
-                    setTimeout(updateCount, 20);
+                    setTimeout(updateCount, 40);
                 }
 
             } else {
