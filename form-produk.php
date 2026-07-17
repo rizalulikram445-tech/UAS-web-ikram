@@ -124,20 +124,22 @@ if (isset($_POST['simpan'])) {
           <h2 class="fw-bold">Form Produk UMKM</h2>
         </div>
 
-<form method="post" enctype="multipart/form-data" class="row g-3"></form>
-          <div class="col-md-6">
+<form method="post" enctype="multipart/form-data" class="row g-3">
+          <!-- Baris 1: Nama & SKU -->
+          <div class="col-lg-8">
             <label class="form-label fw-semibold">Nama Produk</label>
             <input type="text" name="nama_produk" value="<?= htmlspecialchars($nama_produk); ?>" class="form-control" required maxlength="120">
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-4">
             <label class="form-label fw-semibold">SKU</label>
             <input type="text" name="sku" value="<?= htmlspecialchars($sku); ?>" class="form-control" required maxlength="40">
           </div>
-          <div class="col-md-3">
+          
+          <!-- Baris 2: Kategori, Harga, Stok -->
+          <div class="col-lg-4">
             <label class="form-label fw-semibold">Kategori</label>
             <select name="id_kategori" class="form-select" required>
               <option value="">Pilih kategori</option>
-
               <?php
               // 4. Mengambil Kategori Dinamis dari database
               $kat_query = mysqli_query($koneksi, "SELECT * FROM kategori_produk WHERE status_kategori='aktif'");
@@ -148,41 +150,44 @@ if (isset($_POST['simpan'])) {
               ?>
             </select>
           </div>
-          <div class="col-md-4">
+          <div class="col-lg-4">
             <label class="form-label fw-semibold">Harga</label>
             <input type="number" name="harga" value="<?= htmlspecialchars($harga); ?>" class="form-control" required min="0" step="100">
           </div>
-          <div class="col-md-4">
+          <div class="col-lg-4">
             <label class="form-label fw-semibold">Stok</label>
             <input type="number" name="stok" value="<?= htmlspecialchars($stok); ?>" class="form-control" required min="0" step="1">
           </div>
-          <div class="col-md-4">
+          
+          <!-- Baris 3: Status & Gambar -->
+          <div class="col-lg-6">
             <label class="form-label fw-semibold">Status</label>
             <select name="status_produk" class="form-select" required>
               <option value="aktif" <?= $status_produk == 'aktif' ? 'selected' : ''; ?>>Aktif</option>
               <option value="nonaktif" <?= $status_produk == 'nonaktif' ? 'selected' : ''; ?>>Nonaktif</option>
             </select>
           </div>
+          <div class="col-lg-6">
+            <label class="form-label fw-semibold">Gambar Produk</label>
+            <input type="file" name="gambar_produk" class="form-control" accept="image/png, image/jpeg, image/jpg, image/webp">
+            <div class="form-text">Max: 2MB (JPG, PNG, WEBP)</div>
+          </div>
+          
+          <!-- Preview Gambar -->
+          <?php if ($id_produk > 0 && !empty($upload_gambar) && file_exists('img/' . $upload_gambar)): ?>
+            <div class="col-lg-6">
+              <p class="mb-2 small text-muted">Gambar Saat Ini:</p>
+              <img src="img/<?= $upload_gambar; ?>" alt="Gambar" class="img-thumbnail" style="max-height: 200px;">
+            </div>
+          <?php endif; ?>
+          
+          <!-- Baris 4: Deskripsi -->
           <div class="col-12">
             <label class="form-label fw-semibold">Deskripsi</label>
-            <textarea name="deskripsi" class="form-control" rows="4" maxlength="500"><?= htmlspecialchars($deskripsi); ?></textarea>
+            <textarea name="deskripsi" class="form-control" rows="3" maxlength="500"><?= htmlspecialchars($deskripsi); ?></textarea>
           </div>
 
-<div class="col-12">
-  <label class="form-label fw-semibold">Gambar Produk</label>
-  <input type="file" name="gambar_produk" class="form-control" accept="image/png, image/jpeg, image/jpg, image/webp">
-  <div class="form-text">Format didukung: JPG, JPEG, PNG, WEBP. Ukuran maksimal: 2MB.</div>
-  
-  <!-- Menampilkan preview gambar saat ini jika sedang mengedit produk -->
-  <?php if ($id_produk > 0 && !empty($gambar_lama) && file_exists('img/' . $gambar_lama)): ?>
-    <div class="mt-2">
-      <p class="mb-1 small text-muted">Gambar saat ini:</p>
-      <img src="img/<?= $gambar_lama; ?>" alt="Gambar" class="img-thumbnail" style="max-height: 150px;">
-    </div>
-    
-  <?php endif; ?>
-</div>
-
+          <!-- Tombol Submit -->
           <div class="col-12 mt-4">
             <button class="btn btn-primary px-4 me-2" type="submit" name="simpan">Simpan Produk</button>
             <a href="produk.php" class="btn btn-outline-secondary px-4">Batal</a>
