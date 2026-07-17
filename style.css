@@ -431,3 +431,50 @@ body {
     padding: 30px 24px;
   }
 }
+
+/* ===========================
+   Efek Interaktif Product Card
+=========================== */
+
+.product-card{
+    position: relative;
+    overflow: hidden;
+    border-radius: 18px;
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,.08);
+    cursor: pointer;
+    will-change: transform;
+}
+
+.product-card:hover{
+    box-shadow: 0 20px 40px rgba(0,0,0,.18);
+}
+
+.product-card img{
+    transition: transform .4s ease;
+}
+
+.product-card:hover img{
+    transform: scale(1.06);
+}
+
+.product-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        120deg,
+        rgba(255,255,255,0) 20%,
+        rgba(255,255,255,.22) 50%,
+        rgba(255,255,255,0) 80%
+    );
+    transform:translateX(-130%);
+    transition:.6s;
+    pointer-events:none;
+}
+
+.product-card:hover::before{
+    transform:translateX(130%);
+}
