@@ -124,7 +124,7 @@ if (isset($_POST['simpan'])) {
           <h2 class="fw-bold">Form Produk UMKM</h2>
         </div>
 
-        <form method="post" class="row g-3">
+<form method="post" enctype="multipart/form-data" class="row g-3"></form>
           <div class="col-md-6">
             <label class="form-label fw-semibold">Nama Produk</label>
             <input type="text" name="nama_produk" value="<?= htmlspecialchars($nama_produk); ?>" class="form-control" required maxlength="120">
@@ -137,6 +137,7 @@ if (isset($_POST['simpan'])) {
             <label class="form-label fw-semibold">Kategori</label>
             <select name="id_kategori" class="form-select" required>
               <option value="">Pilih kategori</option>
+
               <?php
               // 4. Mengambil Kategori Dinamis dari database
               $kat_query = mysqli_query($koneksi, "SELECT * FROM kategori_produk WHERE status_kategori='aktif'");
@@ -166,6 +167,22 @@ if (isset($_POST['simpan'])) {
             <label class="form-label fw-semibold">Deskripsi</label>
             <textarea name="deskripsi" class="form-control" rows="4" maxlength="500"><?= htmlspecialchars($deskripsi); ?></textarea>
           </div>
+
+<div class="col-12">
+  <label class="form-label fw-semibold">Gambar Produk</label>
+  <input type="file" name="gambar_produk" class="form-control" accept="image/png, image/jpeg, image/jpg, image/webp">
+  <div class="form-text">Format didukung: JPG, JPEG, PNG, WEBP. Ukuran maksimal: 2MB.</div>
+  
+  <!-- Menampilkan preview gambar saat ini jika sedang mengedit produk -->
+  <?php if ($id_produk > 0 && !empty($gambar_lama) && file_exists('img/' . $gambar_lama)): ?>
+    <div class="mt-2">
+      <p class="mb-1 small text-muted">Gambar saat ini:</p>
+      <img src="img/<?= $gambar_lama; ?>" alt="Gambar" class="img-thumbnail" style="max-height: 150px;">
+    </div>
+    
+  <?php endif; ?>
+</div>
+
           <div class="col-12 mt-4">
             <button class="btn btn-primary px-4 me-2" type="submit" name="simpan">Simpan Produk</button>
             <a href="produk.php" class="btn btn-outline-secondary px-4">Batal</a>
