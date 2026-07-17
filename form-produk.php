@@ -6,10 +6,9 @@ if (!isset($_SESSION['username'])) {
     exit;
 }
 include "koneksi.php";
-
 // 2. Deteksi Mode: Cek apakah ada parameter 'id' di URL untuk mode EDIT
 $id_produk = isset($_GET['id']) ? (int)$_GET['id'] : 0;
-$nama_produk = $sku = $id_kategori = $harga = $stok = $status_produk = $deskripsi = "";
+$nama_produk = $sku = $id_kategori = $harga = $stok = $status_produk = $deskripsi = $upload_gambar = "";
 
 // Jika mode EDIT, ambil data lama dari database untuk ditampilkan di form
 if ($id_produk > 0) {
@@ -22,6 +21,7 @@ if ($id_produk > 0) {
         $stok          = $data['stok'];
         $status_produk = $data['status_produk'];
         $deskripsi     = $data['deskripsi'];
+        $upload_gambar   = $data['gambar_produk'];
     }
 }
 
@@ -35,20 +35,50 @@ if (isset($_POST['simpan'])) {
     $stok          = (int)$_POST['stok'];
     $status_produk = mysqli_real_escape_string($koneksi, $_POST['status_produk']);
     $deskripsi     = mysqli_real_escape_string($koneksi, $_POST['deskripsi']);
-    $gambar_produk = ""; 
+  $gambar_produk = $upload_gambar; 
+
+    if (isset($_FILES['gambar_produk']) && $_FILES['gambar_produk']['error'] === UPLOAD_ERR_OK) {
+        $file_name     = $_FILES['gambar_produk']['name'];
+        $file_tmp      = $_FILES['gambar_produk']['tmp_name'];
+        $file_size     = $_FILES['gambar_produk']['size'];
+        $file_ext      = strtolower(pathinfo($file_name, PATHINFO_EXTENSION));
+        $allowed_exts  = ['jpg', 'jpeg', 'png', 'webp'];
+
+        if (in_array($file_ext, $allowed_exts)) {
+            if ($file_size <= 2 * 1024 * 1024) {
+                $new_file_name = time() . '_' . uniqid() . '.' . $file_ext;
+                $upload_dir    = 'img/';
+
+                if (!is_dir($upload_dir)) {
+                    mkdir($upload_dir, 0755, true);
+                }
+
+                if (move_uploaded_file($file_tmp, $upload_dir . $new_file_name)) {
+                    $gambar_produk = $new_file_name;
+
+                    if ($id_produk > 0 && !empty($gambar_lama) && file_exists($upload_dir . $gambar_lama)) {
+                        unlink($upload_dir . $gambar_lama);
+                    }
+                }
+            } else {
+                echo "<script>alert('Ukuran gambar terlalu besar! Maksimal 2MB.');</script>";
+            }
+        } else {
+            echo "<script>alert('Format file salah! Gunakan JPG, JPEG, PNG, atau WEBP.');</script>";
+        }
+    } 
 
     if ($id_produk > 0) {
         // Jika id_produk ada, jalankan query UPDATE
         $query = "UPDATE produk SET 
-                    id_kategori='$id_kategori', 
-                    nama_produk='$nama_produk', 
-                    sku='$sku', 
-                    deskripsi='$deskripsi', 
-                    harga='$harga', 
-                    stok='$stok', 
-                    status_produk='$status_produk' 
-                  WHERE id_produk=$id_produk";
-    } else {
+            id_kategori='$id_kategori', 
+            nama_produk='$nama_produk', 
+            sku='$sku', 
+            deskripsi='$deskripsi', 
+            harga='$harga', 
+            stok='$stok',
+            gambar_produk='$gambar_produk', -- <-- TAMBAHKAN BARIS INI
+        } else {
         // Jika id_produk tidak ada, jalankan query INSERT
         $query = "INSERT INTO produk (id_kategori, nama_produk, sku, deskripsi, harga, stok, gambar_produk, status_produk) 
                   VALUES ('$id_kategori', '$nama_produk', '$sku', '$deskripsi', '$harga', '$stok', '$gambar_produk', '$status_produk')";
