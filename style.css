@@ -79,6 +79,9 @@ body {
   padding: 24px;
 }
 
+/* ==========================================================================
+   BAGIAN HERO (KOTAK BIRU) - SUDAH DITAMBAHKAN BAYANGAN & PERBAIKAN LAYOUT
+   ========================================================================== */
 .hero {
   min-height: 250px;
   padding: 34px;
@@ -87,6 +90,13 @@ body {
   background:
     linear-gradient(110deg, rgba(15,23,42,.94), rgba(37,99,235,.72)),
     url("https://images.unsplash.com/photo-1556745757-8d76bdb6984b?auto=format&fit=crop&w=1600&q=80") center/cover;
+  
+  /* Efek bayangan modern yang lembut */
+  box-shadow: 0 15px 35px rgba(37, 99, 235, 0.25), 0 5px 15px rgba(0, 0, 0, 0.1);
+  
+  /* Memperbaiki posisi tumpukan agar tidak tertindih kotak putih sebelah kanan */
+  position: relative;
+  z-index: 5; 
 }
 
 .hero p,
