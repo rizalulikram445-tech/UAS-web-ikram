@@ -56,8 +56,8 @@ if (isset($_POST['simpan'])) {
                 if (move_uploaded_file($file_tmp, $upload_dir . $new_file_name)) {
                     $gambar_produk = $new_file_name;
 
-                    if ($id_produk > 0 && !empty($gambar_lama) && file_exists($upload_dir . $gambar_lama)) {
-                        unlink($upload_dir . $gambar_lama);
+                    if ($id_produk > 0 && !empty($upload_gambar) && file_exists($upload_dir . $upload_gambar)) {
+                        unlink($upload_dir . $upload_gambar);
                     }
                 }
             } else {
@@ -77,8 +77,10 @@ if (isset($_POST['simpan'])) {
             deskripsi='$deskripsi', 
             harga='$harga', 
             stok='$stok',
-            gambar_produk='$gambar_produk', -- <-- TAMBAHKAN BARIS INI
-        } else {
+            gambar_produk='$gambar_produk',
+            status_produk='$status_produk'
+            WHERE id_produk='$id_produk'";
+    } else {
         // Jika id_produk tidak ada, jalankan query INSERT
         $query = "INSERT INTO produk (id_kategori, nama_produk, sku, deskripsi, harga, stok, gambar_produk, status_produk) 
                   VALUES ('$id_kategori', '$nama_produk', '$sku', '$deskripsi', '$harga', '$stok', '$gambar_produk', '$status_produk')";
