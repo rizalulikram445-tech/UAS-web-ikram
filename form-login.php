@@ -74,7 +74,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
           <div class="mb-3">
             <label class="form-label" for="password">Password</label>
-            <input id="password" type="password" name="password" class="form-control" placeholder="Masukkan password" required minlength="5">
+            <div class="input-group mb-3">
+    <input id="password" type="password" name="password"
+        class="form-control"
+        placeholder="Masukkan password"
+        required minlength="6">
+
+    <button class="btn btn-outline-secondary"
+            type="button"
+            id="togglePassword">
+        <i class="bi bi-eye"></i>
+    </button>
+</div>
           </div>
 
           <div class="d-flex justify-content-between align-items-center mb-4 small">

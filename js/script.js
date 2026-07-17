@@ -1,62 +1,98 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Kode di dalam sini baru jalan setelah HTML selesai dimuat
-});
-const formKategori = document.querySelector("#kategori form");
 
-formKategori.addEventListener("submit", function (e) {
-    // Semua pengecekan dilakukan di sini
-});
+    // ==========================
+    // SHOW / HIDE PASSWORD
+    // ==========================
+    const password = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
 
-const inputNama = formKategori.querySelector('input[name="nama_kategori"]');
-const namaKategori = inputNama.value.trim();
+    if (password && togglePassword) {
+        togglePassword.addEventListener("click", function () {
 
-if (namaKategori === "") {
-    alert("Nama kategori tidak boleh hanya berisi spasi kosong!");
-    e.preventDefault(); 
-    inputNama.focus();   
-    return;
-}
-
-if (namaKategori.length > 80) {
-    alert("Nama kategori maksimal 80 karakter!");
-    e.preventDefault();
-    inputNama.focus();
-    return;
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-        const counters = document.querySelectorAll('.counter');
-        
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            
-            // Kecepatan durasi animasi (makin besar angkanya, makin lambat)
-            const speed = 40; 
-            
-            const updateCount = () => {
-                const currentCount = +counter.innerText.replace(/\./g, ''); // Hapus format titik saat kalkulasi
-                const inc = Math.ceil(target / speed);
-
-                if (currentCount < target) {
-                    const nextCount = currentCount + inc;
-                    
-                    // Jika hasil pertambahan melebihi target, langsung kunci di angka target
-                    if (nextCount > target) {
-                        counter.innerText = target.toLocaleString('id-ID');
-                    } else {
-                        counter.innerText = nextCount.toLocaleString('id-ID');
-                        setTimeout(updateCount, 20); // Interval pemicu animasi (milidetik)
-                    }
-                } else {
-                    counter.innerText = target.toLocaleString('id-ID');
-                }
-            };
-            
-            // Jalankan fungsi jika target di atas 0
-            if (target > 0) {
-                updateCount();
+            if (password.type === "password") {
+                password.type = "text";
+                this.innerHTML = '<i class="bi bi-eye-slash"></i>';
             } else {
-                counter.innerText = "0";
+                password.type = "password";
+                this.innerHTML = '<i class="bi bi-eye"></i>';
             }
+
         });
+    }
+
+    // ==========================
+    // VALIDASI KATEGORI
+    // ==========================
+    const formKategori = document.querySelector("#kategori form");
+
+    if (formKategori) {
+
+        formKategori.addEventListener("submit", function (e) {
+
+            const inputNama = formKategori.querySelector('input[name="nama_kategori"]');
+
+            const namaKategori = inputNama.value.trim();
+
+            if (namaKategori === "") {
+                alert("Nama kategori tidak boleh hanya berisi spasi kosong!");
+                e.preventDefault();
+                inputNama.focus();
+                return;
+            }
+
+            if (namaKategori.length > 80) {
+                alert("Nama kategori maksimal 80 karakter!");
+                e.preventDefault();
+                inputNama.focus();
+                return;
+            }
+
+        });
+
+    }
+
+    // ==========================
+    // COUNTER ANIMATION
+    // ==========================
+    const counters = document.querySelectorAll('.counter');
+
+    counters.forEach(counter => {
+
+        const target = +counter.getAttribute('data-target');
+
+        const speed = 40;
+
+        const updateCount = () => {
+
+            const currentCount = +counter.innerText.replace(/\./g, '');
+
+            const inc = Math.ceil(target / speed);
+
+            if (currentCount < target) {
+
+                const nextCount = currentCount + inc;
+
+                if (nextCount > target) {
+                    counter.innerText = target.toLocaleString('id-ID');
+                } else {
+                    counter.innerText = nextCount.toLocaleString('id-ID');
+                    setTimeout(updateCount, 20);
+                }
+
+            } else {
+
+                counter.innerText = target.toLocaleString('id-ID');
+
+            }
+
+        };
+
+        if (target > 0) {
+            updateCount();
+        } else {
+            counter.innerText = "0";
+        }
+
     });
+
+});
