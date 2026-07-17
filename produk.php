@@ -62,13 +62,14 @@ $warna = [
   <div class="layout">
     <aside class="sidebar">
       <div class="brand"><i class="bi bi-shop"></i><span>UMKM Mart</span></div>
-      <a href="home.php" ><i class="bi bi-grid"></i> Dashboard</a>
-      <a href="produk.php" class="active"><i class="bi bi-box-seam"></i> Produk</a>
-      <a href="form-produk.php"><i class="bi bi-plus-circle"></i> Tambah Produk</a>
-      <a href="kategori.php"><i class="bi bi-tags"></i> Kategori</a>
-      <a href="logout.php"><i class="bi bi-person-lock"></i> Log-out</a>
+      <nav class="nav flex-column gap-2">
+        <a href="home.php" class="nav-link text-white active bg-primary rounded"><i class="bi bi-grid me-2"></i> Dashboard</a>
+        <a href="produk.php" class="nav-link text-white"><i class="bi bi-box-seam me-2"></i> Produk</a>
+        <a href="form-produk.php" class="nav-link text-white"><i class="bi bi-plus-circle me-2"></i> Tambah Produk</a>
+        <a href="kategori.php" class="nav-link text-white"><i class="bi bi-tags me-2"></i> Kategori</a>
+        <a href="logout.php" class="nav-link text-danger mt-5" onclick="return confirm('Apakah Anda yakin ingin logout?')"><i class="bi bi-person-lock me-2"></i> Log-out</a>
+      </nav>
     </aside>
-
     <main class="content">
  
 
