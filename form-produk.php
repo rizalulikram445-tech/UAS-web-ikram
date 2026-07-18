@@ -199,7 +199,7 @@ if (isset($_POST['simpan'])) {
 
  <footer>
   <div class="footer">
-    <h3>WEB Produk UMKM</h3>
+    <h3>Produk UMKM</h3>
     <p>Menyediakan barang-barang dan berbagai macam sembako</p>
     <p>📍Alamat: Jalan No.15 tgk. Imam Mujahid Fillah</p>
     <p>☎️No:082152147841</p>
