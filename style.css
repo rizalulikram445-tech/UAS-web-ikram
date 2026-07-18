@@ -478,3 +478,12 @@ body {
 .product-card:hover::before{
     transform:translateX(130%);
 }
+
+.footer{
+  text-align: center;
+  font-family: arial, sans-serif;
+  background-color: var(--dark);
+  color: var(--line);
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
