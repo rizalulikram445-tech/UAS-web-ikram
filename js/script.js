@@ -151,3 +151,31 @@ if(search){
     }
 
 }
+
+// SAPAAN BERDASARKAN WAKTU
+
+
+function updateSapaan(){
+
+    const jam = new Date().getHours();
+
+    let salam = "";
+
+    if(jam < 11){
+        salam = "Selamat Pagi🌅 ";
+    }
+    else if(jam < 15){
+        salam = "Selamat Siang☀️ ";
+    }
+    else if(jam < 18){
+        salam = "Selamat Sore🌇 ";
+    }
+    else{
+        salam = "Selamat Malam🌙 ";
+    }
+
+    document.getElementById("sapaan").innerHTML = salam;
+
+}
+
+updateSapaan();

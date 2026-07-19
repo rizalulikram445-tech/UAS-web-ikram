@@ -48,7 +48,8 @@ $totalNilai = mysqli_fetch_assoc($queryNilai);
 
     <main class="content p-4">
       <section id="dashboard" class="hero bg-light p-5 rounded border mb-4 shadow-sm">
-        <p class="text-primary fw-bold mb-1">Selamat Datang Kembaliiii, <?= htmlspecialchars($_SESSION['username']); ?>!</p>
+        <p id="sapaan" class="fw-bold fs-4 mb-2 text-white"></p>
+        <p class="text-primary fw-bold mb-1">Selamat Datang Kembali, <?= htmlspecialchars($_SESSION['username']); ?>!</p>
         <h1 class="fw-bold">Sistem Pengelolaan Data Produk UMKM</h1>
         <span class="text-white-50">Kelola produk, kategori, harga, stok, dan pencarian produk dalam satu dashboard modern yang terintegrasi.</span>
       </section>
