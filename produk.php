@@ -2,7 +2,6 @@
 
 include "koneksi.php";
 
-$kata_kunci = isset($_GET['kata_kunci']) ? $_GET['kata_kunci'] : "";
 $kategori   = isset($_GET['kategori']) ? $_GET['kategori'] : "";
 $stok       = isset($_GET['stok']) ? $_GET['stok'] : "";
 
@@ -13,13 +12,6 @@ JOIN kategori_produk
 ON produk.id_kategori = kategori_produk.id_kategori
 WHERE 1=1
 ";
-
-if($kata_kunci != ""){
-    $sql .= " AND (
-        produk.nama_produk LIKE '%$kata_kunci%'
-        OR produk.sku LIKE '%$kata_kunci%'
-    )";
-}
 
 if($kategori != ""){
     $sql .= " AND kategori_produk.nama_kategori='$kategori'";
@@ -63,8 +55,8 @@ $warna = [
     <aside class="sidebar">
       <div class="brand"><i class="bi bi-shop"></i><span>UMKM Mart</span></div>
       <nav class="nav flex-column gap-2">
-        <a href="home.php" class="nav-link text-white active bg-primary rounded"><i class="bi bi-grid me-2"></i> Dashboard</a>
-        <a href="produk.php" class="nav-link text-white"><i class="bi bi-box-seam me-2"></i> Produk</a>
+        <a href="home.php"class="nav-link text-white"><i class="bi bi-grid me-2"></i> Dashboard</a>
+        <a href="produk.php"class="nav-link text-white active bg-primary rounded"><i class="bi bi-box-seam me-2"></i> Produk</a>
         <a href="form-produk.php" class="nav-link text-white"><i class="bi bi-plus-circle me-2"></i> Tambah Produk</a>
         <a href="kategori.php" class="nav-link text-white"><i class="bi bi-tags me-2"></i> Kategori</a>
         <a href="logout.php" class="nav-link text-danger mt-5" onclick="return confirm('Apakah Anda yakin ingin logout?')"><i class="bi bi-person-lock me-2"></i> Log-out</a>
@@ -86,7 +78,10 @@ $warna = [
 
         <form class="row g-2 mb-4" action="#produk" method="get">
           <div class="col-md-6">
-            <input type="search" name="kata_kunci" class="form-control" placeholder="Cari nama produk atau SKU">
+            <input type="search"
+       id="search"
+       class="form-control"
+       placeholder="Cari produk...">
           </div>
           <div class="col-md-3">
             <select name="kategori" class="form-select">

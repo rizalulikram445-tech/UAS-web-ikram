@@ -122,3 +122,32 @@ cards.forEach(card => {
     });
 
 });
+
+//fitur pencarian//
+const search = document.getElementById("search");
+
+if(search){
+
+    search.onkeyup = function(){
+
+        let keyword = this.value.toLowerCase();
+
+        document.querySelectorAll(".product-card").forEach(function(card){
+
+            let isi = card.innerText.toLowerCase();
+
+            if(isi.includes(keyword)){
+
+                card.style.display = "";
+
+            }else{
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+    }
+
+}
